@@ -4,11 +4,13 @@
 #
 Name     : mvn-jsr311
 Version  : 1.1.1
-Release  : 1
+Release  : 2
 URL      : https://github.com/javaee/jsr311/archive/jsr311-api-1.1.1.tar.gz
 Source0  : https://github.com/javaee/jsr311/archive/jsr311-api-1.1.1.tar.gz
-Source1  : https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar
-Source2  : https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.pom
+Source1  : https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.jar
+Source2  : https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.pom
+Source3  : https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar
+Source4  : https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CDDL-1.0
@@ -28,15 +30,22 @@ data components for the mvn-jsr311 package.
 
 
 %prep
+%setup -q -n jsr311-jsr311-api-1.1.1
 
 %build
 
 %install
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.1.1
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.0
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.0
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.1.1
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.pom
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.1.1
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.pom
 
 
 %files
@@ -44,5 +53,7 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.jar
+/usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.pom
 /usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar
 /usr/share/java/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.pom

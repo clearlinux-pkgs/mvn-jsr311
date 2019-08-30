@@ -4,7 +4,7 @@
 #
 Name     : mvn-jsr311
 Version  : 1.1.1
-Release  : 2
+Release  : 3
 URL      : https://github.com/javaee/jsr311/archive/jsr311-api-1.1.1.tar.gz
 Source0  : https://github.com/javaee/jsr311/archive/jsr311-api-1.1.1.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.jar
